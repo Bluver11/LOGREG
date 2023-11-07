@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private Button LogIn;
     private Button SignUp;
 
+    private DBHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +28,17 @@ public class MainActivity extends AppCompatActivity {
         LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(MainActivity.this, LoggedInActivity.class);
-                startActivity(intent);
-                finish();
+                String usernameOrEmail = UserName.getText().toString();
+                String password = PassWord.getText().toString();
+
+                if (dbHelper.checkUserByUsername(usernameOrEmail, password)) {
+                    Toast.makeText(MainActivity.this, "Sikeres bejelentkezés!", Toast.LENGTH_SHORT).show();
+                    login(usernameOrEmail, password);
+                } else {
+                    Toast.makeText(MainActivity.this, "Sikertelen bejelentkezés!", Toast.LENGTH_SHORT).show();
+                }
             }
+
         });
 
         SignUp.setOnClickListener(new View.OnClickListener() {
@@ -43,12 +53,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+public void login(String username, String password){
 
+}
     public void  init(){
         UserName = findViewById(R.id.username);
         PassWord = findViewById(R.id.password);
         LogIn = findViewById(R.id.logIn);
         SignUp = findViewById(R.id.signUp);
+
 
     }
 }

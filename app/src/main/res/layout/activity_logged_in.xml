@@ -12,12 +12,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/TeljesNev1"
         android:layout_centerVertical="true"
-        android:text="Random"/>
+        android:text=""/>
 
   <Button
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:id="@+id/Kijelentkezes"
+      android:id="@+id/logout"
       android:layout_below="@id/TeljesNev1"
       android:text="Kijelentkezés"
       />
