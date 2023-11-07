@@ -16,36 +16,36 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/FelhasznaloNev1"
+        android:id="@+id/username1"
         android:layout_below="@id/Email"
         android:hint="Felhasznalónév"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Jelszo1"
-        android:layout_below="@id/FelhasznaloNev1"
+        android:id="@+id/password1"
+        android:layout_below="@id/username1"
         android:hint="Jelszó"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TeljesNev"
-        android:layout_below="@id/Jelszo1"
+        android:id="@+id/Fullname"
+        android:layout_below="@id/password1"
         android:hint="Teljes Név"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Regisztracio1"
-        android:layout_below="@id/TeljesNev"
+        android:id="@+id/signUp1"
+        android:layout_below="@id/Fullname"
         android:text="Regisztráció"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Vissza"
-        android:layout_below="@id/Regisztracio1"
+        android:id="@+id/back"
+        android:layout_below="@id/signUp1"
         android:text="Vissza"
         />
 

@@ -9,7 +9,7 @@
 
 
     <EditText
-        android:id="@+id/FelhasznaloNev"
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Felhasználónév"/>
@@ -17,19 +17,20 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Jelszo"
-        android:layout_below="@id/FelhasznaloNev"
+        android:id="@+id/password"
+        android:layout_below="@id/username"
         android:hint="Jelszó"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bejelentkezés"
-        android:id="@+id/Bejelentkezes"
-        android:layout_below="@id/Jelszo"/>
+        android:id="@+id/logIn"
+        android:layout_below="@id/password"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Regisztráció"
-        android:layout_below="@id/Bejelentkezes"/>
+        android:id="@+id/signUp"
+        android:layout_below="@id/logIn"/>
   </RelativeLayout>
