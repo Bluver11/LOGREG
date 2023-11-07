@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Email"
+        android:hint="Email"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/FelhasznaloNev1"
+        android:layout_below="@id/Email"
+        android:hint="Felhasznalónév"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Jelszo1"
+        android:layout_below="@id/FelhasznaloNev1"
+        android:hint="Jelszó"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TeljesNev"
+        android:layout_below="@id/Jelszo1"
+        android:hint="Teljes Név"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Regisztracio1"
+        android:layout_below="@id/TeljesNev"
+        android:text="Regisztráció"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Vissza"
+        android:layout_below="@id/Regisztracio1"
+        android:text="Vissza"
+        />
+
+
+
+</RelativeLayout>
