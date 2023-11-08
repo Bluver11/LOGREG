@@ -9,11 +9,11 @@ import android.content.Context;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class DBHelper extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "users.db";
     private static final int DB_VERSION = 1;
-    private static final String TABLE_NAME = "users";
+    private static final String TABLE_NEV = "users";
     private static final String COL_ID = "ID";
     private static final String COL_EMAIL = "email";
     private static final String COL_FELHASZNALONEV = "username";
@@ -28,7 +28,7 @@ public abstract class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sql = "CREATE TABLE " + TABLE_NAME + " (" +
+        String sql = "CREATE TABLE " + TABLE_NEV + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_EMAIL + " TEXT NOT NULL, " +
                 COL_FELHASZNALONEV + " TEXT NOT NULL, " +
@@ -40,14 +40,14 @@ public abstract class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL(
-                "DROP TABLE IF EXISTS " + TABLE_NAME
+                "DROP TABLE IF EXISTS " + TABLE_NEV
         );
         onCreate(sqLiteDatabase);
     }
 
-    public boolean addToTable(String email, String username, String password, String fullname) {
+    public  boolean addToTable(String email, String username, String password, String fullname) {
 
-        SQLiteDatabase database = this.getWritableDatabase();
+        SQLiteDatabase database = getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(COL_EMAIL, email);
@@ -55,7 +55,7 @@ public abstract class DBHelper extends SQLiteOpenHelper {
         values.put(COL_JELSZO, password);
         values.put(COL_TELJESNEV, fullname);
 
-        long result = database.insert(TABLE_NAME, null, values);
+        long result = database.insert(TABLE_NEV, null, values);
         return result != -1;
     }
 
@@ -65,7 +65,7 @@ public abstract class DBHelper extends SQLiteOpenHelper {
 
     public boolean checkUserByUsername(String username, String password) {
         SQLiteDatabase database = this.getReadableDatabase();
-        Cursor cursor = database.query(TABLE_NAME, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
+        Cursor cursor = database.query(TABLE_NEV, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
                 COL_FELHASZNALONEV + " = ? AND " + COL_JELSZO + " = ?", new String[] {username, password},
                 null, null, null);
         return cursor.getCount() > 0;
@@ -74,27 +74,27 @@ public abstract class DBHelper extends SQLiteOpenHelper {
 
     public Cursor getTable() {
         SQLiteDatabase database = this.getReadableDatabase();
-        return database.query(TABLE_NAME, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
+        return database.query(TABLE_NEV, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
                 null, null, null, null, null);
     }
 
     public Cursor getTableElementById(int id) {
         SQLiteDatabase database = this.getReadableDatabase();
-        return database.query(TABLE_NAME, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
+        return database.query(TABLE_NEV, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
                 COL_ID + " = ?", new String[] {String.valueOf(id)},
                 null, null, null);
     }
 
     public Cursor getTableElementByEmail(String email, String password) {
         SQLiteDatabase database = this.getReadableDatabase();
-        return database.query(TABLE_NAME, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
+        return database.query(TABLE_NEV, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
                 COL_EMAIL + " = ? AND " + COL_JELSZO + " = ?", new String[] {email, password},
                 null, null, null);
     }
 
     public Cursor getTableElementByUsername(String username, String password) {
         SQLiteDatabase database = this.getReadableDatabase();
-        return  database.query(TABLE_NAME, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
+        return  database.query(TABLE_NEV, new String[] {COL_ID, COL_EMAIL, COL_FELHASZNALONEV, COL_JELSZO, COL_TELJESNEV},
                 COL_FELHASZNALONEV + " = ? AND " + COL_JELSZO + " = ?", new String[] {username, password},
                 null, null, null);
     }

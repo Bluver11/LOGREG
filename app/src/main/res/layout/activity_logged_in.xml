@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/TeljesNev1"
         android:layout_centerVertical="true"
+        android:drawableLeft="@drawable/baseline_drive_file_rename_outline_24_fekete"
         android:text=""/>
 
   <Button

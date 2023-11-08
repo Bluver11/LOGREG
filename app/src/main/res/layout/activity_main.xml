@@ -12,12 +12,16 @@
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_person_24_fekete"
         android:hint="Felhasználónév"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/password"
+        android:drawableLeft="@drawable/baseline_password_24_fekete"
+        android:inputType="textPassword"
+        
         android:layout_below="@id/username"
         android:hint="Jelszó"
         />

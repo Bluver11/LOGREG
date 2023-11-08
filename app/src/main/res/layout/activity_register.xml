@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Email"
+        android:drawableLeft="@drawable/baseline_email_24_fekete"
         android:hint="Email"
         />
     <EditText
@@ -18,6 +19,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/username1"
         android:layout_below="@id/Email"
+        android:drawableLeft="@drawable/baseline_person_24_fekete"
         android:hint="Felhasznalónév"
         />
     <EditText
@@ -25,6 +27,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/password1"
         android:layout_below="@id/username1"
+        android:drawableLeft="@drawable/baseline_password_24_fekete"
         android:hint="Jelszó"
         />
     <EditText
@@ -32,6 +35,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/Fullname"
         android:layout_below="@id/password1"
+        android:drawableLeft="@drawable/baseline_drive_file_rename_outline_24_fekete"
         android:hint="Teljes Név"
         />
     <Button
